@@ -17,12 +17,16 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@google/generative-ai": "^0.21.0",
     "@mui/icons-material": "^6.3.1",
     "@mui/material": "^6.3.1",
     "@mui/x-data-grid": "^7.23.5",
@@ -33,9 +37,11 @@
     "react-drag-drop-files": "^2.4.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^3.0.1",
+    "reactjs-popup": "^2.0.6",
     "reselect": "^5.1.1",
-    "web-vitals": "^4.2.4"
+    "web-vitals": "^4.2.4",
+    "xlsx": "^0.18.5"
   },
   "eslintConfig": {
     "extends": [

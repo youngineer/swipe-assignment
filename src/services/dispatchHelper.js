@@ -1,4 +1,4 @@
-import { addEntity, updateEntity } from "../store/appSlice";
+import { addEntity, updateEntity } from "../store/appSlice.js";
 
 
 export const dispatchHelper = (dispatch, type, data, id = null) => {

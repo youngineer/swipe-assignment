@@ -1,5 +1,6 @@
-import { LOGO_URL } from "../../utils/constants";
+import React from 'react';
 import { Link } from "react-router-dom";
+import { LOGO_URL } from "../utils/constants";
 
 const Header = () => {
   return (

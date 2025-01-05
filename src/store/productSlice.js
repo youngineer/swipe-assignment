@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { updateInvoiceProductDetails } from './invoicesSlice';
+import { updateInvoiceProductDetails } from './invoiceSlice.js';
 
 const initialProductState = {
   getById: {},

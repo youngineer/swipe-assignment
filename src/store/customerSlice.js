@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { updateInvoiceCustomerName } from './invoicesSlice';
+import { updateInvoiceCustomerName } from './invoiceSlice.js';
 
 const initialCustomerState = {
   getById: {},

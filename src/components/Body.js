@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { FileUploader } from "react-drag-drop-files";
-import { fetchApiResult, fetchApiResultJson } from "../services/getAiOutput";
+import { fetchApiResult, fetchApiResultJson } from "../services/fetchApiOutput.js";
 import { useDispatch, useSelector } from "react-redux";
-import { setApiKey } from "../store/apiKeySlice";
-import { validateCustomer, validateInvoice, validateProduct } from "../services/validation";
-import { checkExcelFile } from "../services/handleExcelFile";
-import ControlledPopup from "./ControlledPopup";
-import { addInvoice } from "../store/invoiceSlice";
-import { addProduct } from "../store/productSlice";
-import { addCustomer } from "../store/customerSlice";
+import { setApiKey } from "../store/apiKeySlice.js";
+import { validateCustomer, validateInvoice, validateProduct } from "../services/validation.js";
+import { checkExcelFile } from "../services/handleExcelFile.js";
+import ControlledPopup from "./ControlledPopup.js";
+import { addInvoice } from "../store/invoiceSlice.js";
+import { addProduct } from "../store/productSlice.js";
+import { addCustomer } from "../store/customerSlice.js";
 
 const fileTypes = ["JPG", "PNG", "PDF", "XLSX", "CSV"];
 

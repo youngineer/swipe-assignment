@@ -1,12 +1,13 @@
 import { DataGrid, GridActionsCellItem, GridRowModes } from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateCustomerWithInvoices } from '../store/customersSlice';
+import { updateCustomerWithInvoices } from '../store/customerSlice.js';
 import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Cancel';
 import EditIcon from '@mui/icons-material/Edit';
-import { selectAllCustomers } from '../store/selectors';
+import { selectAllCustomers } from '../store/selector.js';
 import { useCallback, useState } from 'react';
+import React from 'react';
 
 const Customer = () => {
   const dispatch = useDispatch();

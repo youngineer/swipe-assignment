@@ -1,15 +1,15 @@
 
 import './App.css';
-import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
-import Body from './components/Body';
-import Invoice from './components/Invoice';
-import Product from './components/Product';
-import Customer from './components/Customer';
+import Body from './components/Body.js';
+import Invoice from './components/Invoice.js';
+import Product from './components/Product.js';
+import Customer from './components/Customer.js';
+import Header from './components/Header.js';
 import React from 'react';
 import ReactDOM from "react-dom/client"
-import Header from './components/Header';
 import { Provider } from 'react-redux';
-import store from './store/store';
+import store from './store/store.js';
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 function App() {
   return (

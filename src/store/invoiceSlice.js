@@ -25,9 +25,9 @@ const invoicesSlice = createSlice({
         customerId,
         productId
       } = action.payload;
-    
+
       const id = state.nextId;
-    
+
       state.getById[id] = {
         id,
         serialNumber,
@@ -41,22 +41,22 @@ const invoicesSlice = createSlice({
         customerId,
         productId
       };
-    
+
       state.allIds.push(id);
       state.nextId += 1;
-      
+
       // Update relationship maps
       if (!state.customerMap[customerId]) {
         state.customerMap[customerId] = [];
       }
       state.customerMap[customerId].push(id);
-      
+
       if (!state.productMap[productId]) {
         state.productMap[productId] = [];
       }
       state.productMap[productId].push(id);
     },
-    
+
     updateInvoiceCustomerName: (state, action) => {
       const { customerId, customerName } = action.payload;
       if (state.customerMap[customerId]) {
@@ -82,6 +82,29 @@ const invoicesSlice = createSlice({
         });
       }
     },
+
+    updateInvoice: (state, action) => {
+      const { id, updates } = action.payload;
+
+      if (!state.getById[id]) {
+        console.warn(`Invoice with ID ${id} does not exist.`);
+        return;
+      }
+
+      const invoice = state.getById[id];
+
+      // Apply updates to the invoice
+      Object.keys(updates).forEach((key) => {
+        if (invoice.hasOwnProperty(key)) {
+          invoice[key] = updates[key];
+        }
+      });
+
+      // If quantity, price, or tax was updated, recalculate totalPrice
+      if (updates.quantity || updates.price || updates.tax) {
+        invoice.totalPrice = (invoice.price + invoice.tax) * invoice.quantity;
+      }
+    },
   }
 });
 
@@ -89,6 +112,7 @@ export const {
   addInvoice,
   updateInvoiceCustomerName,
   updateInvoiceProductDetails,
+  updateInvoice,
 } = invoicesSlice.actions;
 
 export default invoicesSlice.reducer;

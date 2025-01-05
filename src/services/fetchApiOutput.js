@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { PROMPT } from "../utils/constants";
-import { handleAiResponse } from "./handleAiOutput";
+import { handleAiResponse } from "./handleAiOutput.js";
 
 
 
